@@ -1,5 +1,5 @@
+import { ButtonIconAction } from '@/components/atoms/ButtonIconAction'
 import { LogOut } from 'lucide-react'
-import Image from 'next/image'
 
 export function Profile() {
   return (
@@ -16,9 +16,7 @@ export function Profile() {
           max.232017@gmail.com
         </span>
       </div>
-      <button type="button" className="ml-auto rounded p-2 hover:bg-zinc-50">
-        <LogOut className="h-5 w-5 text-zinc-500" />
-      </button>
+      <ButtonIconAction icon={LogOut} />
     </div>
   )
 }

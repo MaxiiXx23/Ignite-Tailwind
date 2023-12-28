@@ -6,11 +6,12 @@ interface IButtonIconActionProps extends ComponentProps<'button'> {
 
 export function ButtonIconAction({
   icon: Icon,
+  className = 'h-4 w-4 text-zinc-500',
   ...props
 }: IButtonIconActionProps) {
   return (
     <button type="button" className="rounded p-2 hover:bg-zinc-50" {...props}>
-      <Icon className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+      <Icon className={className} strokeWidth={3} />
     </button>
   )
 }
