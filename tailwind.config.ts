@@ -22,6 +22,20 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        slideDownAndFade: {
+          from: { opacity: '0', transform: 'translateY(-2px)' },
+          to: { opacity: '1', transform: 'translateY(0px)' },
+        },
+        slideUpAndFade: {
+          from: { opacity: '1' },
+          to: { opacity: '0' },
+        },
+      },
+      animation: {
+        slideDownAndFade: 'slideDownAndFade 0.3s ease-out',
+        slideUpAndFade: 'slideUpAndFade 1s linear',
+      },
     },
   },
   plugins: [],

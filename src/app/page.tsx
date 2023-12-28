@@ -99,14 +99,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-form gap-3 pt-5">
             <Label htmlFor="country" text="Country" />
-            <Select placeholder="Select a country...">
+            <Select id="country" placeholder="Select a country...">
               <SelectItem value="br" text="Brazil" />
               <SelectItem value="us" text="United States" />
             </Select>
           </div>
           <div className="grid grid-cols-form gap-3 pt-5">
             <Label htmlFor="timezone" text="Timezone" />
-            <Select placeholder="Select a timezone...">
+            <Select id="timezone" placeholder="Select a timezone...">
               <SelectItem
                 value="pst"
                 text="Pacific Standard Time (UTC-08:00)"

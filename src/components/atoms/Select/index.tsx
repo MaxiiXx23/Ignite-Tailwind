@@ -8,12 +8,16 @@ import { ChevronDown } from 'lucide-react'
 interface ISelectProps extends SelectPrimitive.SelectProps {
   children: ReactNode
   placeholder: string
+  id?: string
 }
 
-export function Select({ children, placeholder, ...props }: ISelectProps) {
+export function Select({ id, children, placeholder, ...props }: ISelectProps) {
   return (
     <SelectPrimitive.Root {...props}>
-      <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none data-[placeholder]:text-zinc-600">
+      <SelectPrimitive.Trigger
+        id={id}
+        className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-violet-300 focus:ring-1 focus:ring-violet-200 data-[placeholder]:text-zinc-600"
+      >
         <SelectPrimitive.Value
           placeholder={placeholder}
           className="text-black"
@@ -28,7 +32,7 @@ export function Select({ children, placeholder, ...props }: ISelectProps) {
           side="bottom"
           position="popper"
           sideOffset={8}
-          className="z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-300 bg-white shadow-sm"
+          className="animate-slideDownAndFade z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-300 bg-white shadow-sm"
         >
           <SelectPrimitive.Viewport className="outline-none">
             {children}
