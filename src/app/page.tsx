@@ -2,6 +2,7 @@
 
 import { SettingsTabs } from '@/components/molecules/SettingsTabs'
 import * as Input from '@/components/atoms/Input'
+import * as InputFile from '@/components/atoms/FileInput'
 import { Mail } from 'lucide-react'
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
           action=""
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
         >
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
@@ -58,7 +59,7 @@ export default function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-700"
@@ -78,7 +79,7 @@ export default function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="photo"
               className="text-sm font-medium text-zinc-700"
@@ -88,9 +89,13 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className="grid grid-cols-2 gap-6"></div>
+            <InputFile.Root className="flex items-start gap-5">
+              <InputFile.ImagePreview />
+              <InputFile.Trigger />
+              <InputFile.Control />
+            </InputFile.Root>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
@@ -104,7 +109,7 @@ export default function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
@@ -113,7 +118,7 @@ export default function Home() {
             </label>
             <div className="grid grid-cols-2 gap-6"></div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
@@ -122,7 +127,7 @@ export default function Home() {
             </label>
             <div className="grid grid-cols-2 gap-6"></div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
@@ -131,7 +136,7 @@ export default function Home() {
             </label>
             <div className="grid grid-cols-2 gap-6"></div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
               Bio
               <span className="block text-sm font-normal text-zinc-500">
@@ -140,7 +145,7 @@ export default function Home() {
             </label>
             <div className="grid grid-cols-2 gap-6"></div>
           </div>
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="projects"
               className="text-sm font-medium text-zinc-700"
@@ -150,7 +155,11 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <div className="grid grid-cols-2 gap-6"></div>
+            <InputFile.Root>
+              <InputFile.Trigger />
+              <InputFile.FileList />
+              <InputFile.Control multiple />
+            </InputFile.Root>
           </div>
           <div className="flex items-center justify-end gap-2 pt-5">
             <button
