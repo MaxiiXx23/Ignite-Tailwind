@@ -18,7 +18,7 @@ export default function Home() {
       <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
       <SettingsTabs />
       <div className="mt-6 flex flex-col">
-        <div className="flex justify-between border-b border-zinc-200 pb-5">
+        <div className="flex flex-col justify-between gap-4 border-b border-zinc-200 pb-5 lg:flex-row lg:items-center">
           <div className="space-y-1">
             <h2 className="text-lg font-medium text-zinc-900">Personal Info</h2>
             <span className="text-sm text-zinc-500">
@@ -35,9 +35,9 @@ export default function Home() {
           action=""
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
         >
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <Label htmlFor="firstName" text="Name" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
                 <Input.Control
                   id="firstName"
@@ -45,14 +45,23 @@ export default function Home() {
                   defaultValue="Max"
                 />
               </Input.Root>
+              <Label
+                htmlFor="lastName"
+                text="Last Name"
+                className="lg:hidden"
+              />
               <Input.Root>
-                <Input.Control placeholder="Last name" defaultValue="Jônatas" />
+                <Input.Control
+                  id="lastName"
+                  placeholder="Last name"
+                  defaultValue="Jônatas"
+                />
               </Input.Root>
             </div>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col  gap-3 pt-5 lg:grid lg:grid-cols-2">
             <Label htmlFor="email" text="Email address" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
                 <Input.Prefix>
                   <Mail className="h-5 w-5 text-zinc-500" />
@@ -65,21 +74,21 @@ export default function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label
               htmlFor="photo"
               text="Your photo"
               description="This will be displayed on your profile."
             />
-            <InputFile.Root className="flex items-start gap-5">
+            <InputFile.Root className="flex flex-col gap-5 lg:flex-row lg:items-start">
               <InputFile.ImagePreview />
               <InputFile.Trigger />
               <InputFile.Control />
             </InputFile.Root>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label htmlFor="role" text="Role" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
                 <Input.Control
                   id="role"
@@ -89,14 +98,14 @@ export default function Home() {
               </Input.Root>
             </div>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label htmlFor="country" text="Country" />
             <Select id="country" placeholder="Select a country...">
               <SelectItem value="br" text="Brazil" />
               <SelectItem value="us" text="United States" />
             </Select>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label htmlFor="timezone" text="Timezone" />
             <Select id="timezone" placeholder="Select a timezone...">
               <SelectItem
@@ -106,14 +115,14 @@ export default function Home() {
               <SelectItem value="br-sp" text="America São Paulo (UTC-03:00)" />
             </Select>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label
               htmlFor="bio"
               text="Bio"
               description="Write a short introduction."
             />
             <div className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
                 <Select placeholder="" defaultValue="normal">
                   <SelectItem
                     value="normal"
@@ -136,7 +145,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-form gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 lg:grid lg:grid-cols-form">
             <Label
               htmlFor="projects"
               text="Portfolio projects"
