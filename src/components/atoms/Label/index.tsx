@@ -7,7 +7,10 @@ interface ILabelProps extends ComponentProps<'label'> {
 
 export function Label({ text, description, ...props }: ILabelProps) {
   return (
-    <label className="text-sm font-medium text-zinc-700" {...props}>
+    <label
+      className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+      {...props}
+    >
       {text}
       {description && (
         <span className="block text-sm font-normal text-zinc-500">
